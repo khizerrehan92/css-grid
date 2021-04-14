@@ -1,0 +1,59 @@
+.pulse {
+	width: 100px;
+	height: 100px;
+	position: relative;
+}
+.phone {
+	position: absolute;
+	top: 50%;
+	left: 45.5%;
+	width: 13px;
+	height: 13px;
+	margin: -10.5px 0 0 -6.33333333333px;
+	display: inline-block;
+	border-radius: 50%;
+	opacity: 0.87;
+	background: #d20000;
+	z-index: 2;
+}
+.pulse div {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	border: 1px solid #d30404;
+	border-radius: 50%;
+	animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	animation-iteration-count: infinite;
+	animation-duration: 3200ms;
+	opacity: 0;
+}
+.pulse div.one {
+	animation-name: pulse;
+}
+.pulse div.two {
+	animation-name: pulse;
+	animation-delay: 1000ms;
+}
+
+@keyframes pulse {
+	0% {
+		margin: -4px 0 0 -4px;
+		width: 0;
+		height: 0;
+		opacity: 0;
+	}
+	25% {
+		margin: -17px 0 0 -17px;
+		width: 26px;
+		height: 26px;
+		opacity: 1;
+		border-size: 4px;
+	}
+	100% {
+		margin: -51px 0 0 -51px;
+		width: 96px;
+		height: 96px;
+		opacity: 0;
+		border-size: 6px;
+	}
+}
